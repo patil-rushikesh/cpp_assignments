@@ -2,8 +2,12 @@
 using namespace std;
 class Seqgen{
     int n;
-    int a = 0, b = 1;
+    int a,b;
     public:
+        Seqgen(){
+            a = 0;
+            b = 1;
+        }
         void input(){
             cout<<"Enter the value : ";
             cin>>n;
