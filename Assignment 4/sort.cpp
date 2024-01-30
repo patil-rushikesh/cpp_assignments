@@ -21,6 +21,7 @@ void workingwitharray::show(){
     }
     cout<<endl;
 }
+//sorting
 void workingwitharray::sortasc(){
     for(int i = 0; i < 5; i++){
         for(int j = i+1; j < 5; j++){
