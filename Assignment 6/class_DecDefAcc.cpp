@@ -1,54 +1,47 @@
-//CPP program illustrating class declaraton, definition and accessing class members
 #include<iostream>
 using namespace std;
 class student{
-    int rollno, age;
-    string name, branch, year;
+    string name;
+    int marks[50];
+    string sub[50];
+    int n,total;
+    float avg;
     public:
-        student();
-        void read();
-        void show();
+    void assign();
+    void compute();
+    void display();
 };
-student::student(){
-    rollno = 0;
-    age = 0;
-    name = " ";
-    branch = " ";
-    year = " ";
-}
-void student::read(){
-    cout<<"Enter roll Number : ";
-    cin>>rollno;
-    cout<<"Enter the name : ";
+void student :: assign(){
+    cout<<"Enter name of student : "<<endl;
     cin>>name;
-    cout<<"Enter age : ";
-    cin>>age;
-    cout<<"Enter year : ";
-    cin>>year;
-    cout<<"Enter branch : ";
-    cin>>branch;
+    cout<<"Enter the no of subjects : "<<endl;
+    cin>>n;
+    marks[n];
+    sub[n];
+    cout<<"Enter each subject details : "<<endl;
+    for(int i=0;i<n;i++){
+        cout<<"subject"<<i+1<<"name :";
+        cin>>sub[i];
+        cout<<"Marks for :"<<sub[i]<<"=";
+        cin>>marks[i];
+    }
 }
-void student::show(){
-    cout<<"Roll No : "<<rollno<<endl;
-    cout<<"Name : "<<name<<endl;
-    cout<<"Age : "<<age<<endl;
-    cout<<"Year : "<<year<<endl;
-    cout<<"Branch : "<<branch<<endl;
+void student :: compute(){
+    total=0;
+    for(int i=0;i<n;i++){
+        total=total+marks[i];
+    }
+    avg=total/n;
+}
+void student :: display(){
+    cout<<"Name of student is : "<<name<<endl;
+    cout<<"Total marks obtained : "<<total<<endl;
+    cout<<"Average is : "<< avg<<endl;
 }
 int main(){
-    int n;
-    cout<<"Enter number of students : ";
-    cin>>n;
-    student A[n];
-    for(int i = 0; i < n; i++){
-        A[i].read();
-        cout<<"____________________________________"<<endl;
-    }
-    cout<<"You entered :"<<endl;
-    cout<<"____________________________________"<<endl;
-    for(int i = 0; i < n; i++){
-        A[i].show();
-        cout<<"____________________________________"<<endl;
-    }
+    student s;
+    s.assign();
+    s.compute();
+    s.display();
     return 0;
-};
+}
