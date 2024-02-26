@@ -18,6 +18,9 @@ int main() {
     cout <<endl;
 
     delete ptr;
+
+    //after delete it prints garbage values
+
     for (int i = 0; i < size; ++i) {
         cout << ptr[i] << " ";
     }
