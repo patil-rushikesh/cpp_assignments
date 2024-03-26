@@ -10,7 +10,7 @@ protected:
 
 public:
     virtual void getData() = 0;
-    virtual void showData() const = 0; // Marked as const because it doesn't modify the object
+    virtual void showData() = 0; // Marked as const because it doesn't modify the object
 
     virtual ~Person() {}
 };
@@ -36,7 +36,7 @@ public:
         cin >> publications;
     }
 
-    void showData() const override
+    void showData()
     {
         cout << "Name: " << name << "\nAge: " << age
              << "\nPublications: " << publications << "\ncur_id: " << cur_id << endl;
@@ -68,7 +68,7 @@ public:
         }
     }
 
-    void showData() const override
+    void showData()
     {
         int sum = 0;
         cout << "Name: " << name << "\nAge: " << age << endl;
