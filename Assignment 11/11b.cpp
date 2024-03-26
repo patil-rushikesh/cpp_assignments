@@ -54,7 +54,7 @@ private:
 public:
     Student() : cur_id(id++) {}
 
-    void getData() override
+    void getData() 
     {
         cout << "Enter Details of Student:\n";
         cout << "Name: ";
