@@ -17,7 +17,7 @@ private:
 public:
     Employee() {}
 
-    Employee(int emp_id, string emp_name, int emp_age, double emp_basicSalary, double emp_da, double emp_hra, string emp_department, long long int emp_phNo) {
+    Employee(int emp_id, string emp_name, int emp_age, double emp_basicSalary, double emp_da, double emp_hra, string emp_department, string emp_phNo) {
         id = emp_id;
         name = emp_name;
         age = emp_age;
@@ -28,7 +28,7 @@ public:
         phNo = emp_phNo;
     }
 
-    long long calculateSalary() {
+    double calculateSalary() {
         return da + hra + basicSalary;
     }
 
@@ -36,7 +36,7 @@ public:
         cout << "Enter Employee ID: ";
         cin >> id;
         cout << "Enter Name: ";
-        cin>>name;
+        cin >> name;
         cout << "Enter Age: ";
         cin >> age;
         cout << "Enter Basic Salary: ";
@@ -46,14 +46,14 @@ public:
         cout << "Enter HRA: ";
         cin >> hra;
         cout << "Enter Department: ";
-        cin>>department;
+        cin >> department;
         cout << "Enter Phone Number: ";
         cin >> phNo;
-        if (phNo.size() > 10) {
-            throw ("Phone number must be 10 digits long.");
+        if (phNo.size() != 10) {
+            throw "Phone number must be 10 digits long.";
         }
         if (age < 18) {
-            throw ("Employee must be at least 18 years old.");
+            throw "Employee must be at least 18 years old.";
         }
     }
 
