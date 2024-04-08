@@ -1,5 +1,5 @@
 #include <iostream>
-
+using namespace std;
 template <class T>
 class StudentMarks
 {
@@ -23,10 +23,10 @@ int main()
 {
 
     StudentMarks<int> student1(85, 75);
-    std::cout << "Total marks of student 1 (integer marks): " << student1.calculateTotal() << std::endl;
+    cout << "Total marks of student 1 (integer marks): " << student1.calculateTotal() << endl;
 
     StudentMarks<float> student2(88.5, 91.2);
-    std::cout << "Total marks of student 2 (floating point marks): " << student2.calculateTotal() << std::endl;
+    cout << "Total marks of student 2 (floating point marks): " << student2.calculateTotal() << endl;
 
     return 0;
 }
